@@ -1,10 +1,51 @@
 /* welcome.html stylesheet */
 
+@import url('https://fonts.googleapis.com/css?family=VT323');
 
-* {
-    background-color:gray;
+html {
+    background-color: gray;
+    background-image: url(../img/backgroundTest1.jpg);
+    background-repeat: round;
+    color: white;
+    font-family: 'VT323', monospace;
+}
+
+h1, h2 {
+    text-decoration: underline;
+    color:coral;
+}
+
+.underlineColor {
+    text-decoration: underline;
+    color:coral;
 }
 
 .fancy-header {
     color:coral;
+    text-align: center;
+}
+
+ul {
+    list-style: square;
+}
+
+td, tr {
+    padding 10px, 5px;
+    font-size: 1em;
+}
+
+a:active {
+    color:white;
+}
+
+a:hover {
+    color:coral;
+}
+
+a:link {
+    color:yellow;
+}
+
+a:visited {
+    color:purple;
 }
