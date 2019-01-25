@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<p>Received on <input type="text"> (date) at <input type="text"> (time)</p>
+<img src="img/placeholder-48.svg" alt="">
+<h2>Texas Association of Realtors&reg;</h2>
+<h3>RESIDENTIAL LEASE APPLICATION</h3>
+<p>USE OF THIS FORM BY PERSONS WHO ARE NOT MEMBERS OF THE TEXAS ASSOCIATION OF REALTORS&reg; IS NOT AUTHORIZED.</p>
+<p><strong>&copy;Texas Association of REALTORS&reg;, Inc. 2007</strong></p>
+<h6>Each occupant and co-applicant 18 years or older must submit a separate application.</h6>
+<hr>
+<p>Property Address: <input type="text">
+    <br>Anticipated Move-in Date: <input type="text"> Monthly Rent: $ <input type="text"> Security Deposit: $ <input
+            type="text">
+    <br>Applicant was referred to Landlord by:
+    <br>
+    <label for="realEstateAgent">
+        <input id="realEstateAgent" type="checkbox">Real estate agent <input type="text"> (name) <input
+            type="text"> (phone)
+    </label><br>
+    <label for="newspaper">
+        <input id="newspaper" type="checkbox">Newspaper
+    </label>
+    <label for="sign">
+        <input id="sign" type="checkbox">Sign
+    </label>
+    <label for="other">
+        <input id="other" type="checkbox">Other <input type="text">
+    </label><br>
+    Applicant's name (first, middle, last)<input type="text"><br>
+    Is there a co-applicant?
+    <label for="coApplicant">
+        <input id="coApplicant" class="coApplicant" name="coApplicant" type="radio">yes
+        <input id="coApplicant" class="coApplicant" name="coApplicant" type="radio">no <strong>If yes, co-applicant must submit a separate application.</strong>
+    </label>
+    <br>Applicant's former last name (maiden or married) <input type="text">
+    <br>E-mail <input type="text"> Home Phone <input type="text">
+    <br>Work Phone <input type="text"> Mobile/Pager <input type="text">
+    <br>Soc. Sec. No. <input type="text"> Driver License No. <input type="text"> in <input type="text"> (state)
+    <br>Date of Birth <input type="text"> Height <input type="text"> Weight <input type="text"> Eye Color <input
+            type="text">
+    <br>Hair Color <input type="text"> Marital Status <input type="text"> Citizenship <input type="text"> (country)
+    <br>Emergency Contact: Name: <input type="text">
+    <br>Address: <input type="text">
+    <br>Phone: <input type="text"> E-mail: <input type="text">
+    <br>Name all other persons who will occupy the Property:
+    <br>Name: <input type="text"> Relationship: <input type="text"> Age: <input type="text">
+    <br>Name: <input type="text"> Relationship: <input type="text"> Age: <input type="text">
+    <br>Name: <input type="text"> Relationship: <input type="text"> Age: <input type="text">
+    <br>Name: <input type="text"> Relationship: <input type="text"> Age: <input type="text">
+    <br>Applicant's Current Address: <input type="text"> Apt. No. <input type="text">
+    <br><input type="text">(city, state, zip)
+    <br>Landlord's Name: <input type="text"> Email: <input type="email">
+    <br>Phone:Day: <input type="text"> Nt: <input type="text"> Mb: <input type="text"> Fax: <input type="text">
+    <br>Date Moved-In <input type="text"> Move-Out Date <input type="text"> Rent $ <input type="text">
+    <br>Reason for move: <input type="text">
+    <br>Applicant's Previous Address: <input type="text"> Apt. No. <input type="text">
+    <br><input type="text">(city, state, zip)
+    <br>Landlord's Name: <input type="text"> Email: <input type="email">
+    <br>Phone:Day: <input type="text"> Nt: <input type="text"> Mb: <input type="text"> Fax: <input type="text">
+    <br>Date Moved-In <input type="text"> Move-Out Date <input type="text"> Rent $ <input type="text">
+    <br>Reason for move: <input type="text">
+    <br>(TAR-2003) 10-16-17 Page 1 of 4
+</p>
+<hr>
+
+    <main>
+
+        <form method="POST" action="">
+
+            <fieldset>
+                <legend>Checkbox question here</legend>
+                <label for="checkbox1">
+                    <input id="checkbox1" type="checkbox" checked>checkbox1
+                </label><br>
+                <label for="checkbox2">
+                    <input id="checkbox2" type="checkbox">checkbox2
+                </label><br>
+                <label for="checkbox3">
+                    <input id="checkbox3" type="checkbox">checkbox3
+                </label><br>
+                <label for="checkbox4">
+                    <input id="checkbox4" type="checkbox">checkbox4
+                </label><br>
+                <label for="checkbox5">
+                    <input id="checkbox5" type="checkbox">checkbox5
+                </label><br>
+            </fieldset>
+
+            <div>
+                <label for="dropdown">dropdownSelect
+                    <select name="dropdown" id="dropdown">dropdown select
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                        <option value="option3">option3</option>
+                        <option value="option4">option4</option>
+                    </select>
+                </label><br>
+            </div>
+
+            <div>
+                <label for="hidden">
+                    <input type="hidden" name="hiddenName" value="hiddenValue" id="hidden">
+                </label>
+            </div>
+
+            <div>
+                <label for="text">
+                    <input id="text" type="text" placeholder="placeholderText">
+                </label>
+            </div>
+
+            <div>
+                <label for="email">
+                    <input id="email" type="email" placeholder="placeholderEmail">
+                </label>
+            </div>
+
+            <div>
+                <label for="password">
+                    <input id="password" type="password" placeholder="placeholderPassword">
+                </label>
+            </div>
+
+            <fieldset>
+                <legend>radioQuestion</legend>
+                <label for="radio1">
+                    <input id="radio1" type="radio" name="radioQuestion" checked>radio1
+                </label><br>
+                <label for="radio2">
+                    <input id="radio2" type="radio" name="radioQuestion">radio2
+                </label><br>
+                <label for="radio3">
+                    <input id="radio3" type="radio" name="radioQuestion">radio3
+                </label><br>
+                <label for="radio4">
+                    <input id="radio4" type="radio" name="radioQuestion">radio4
+                </label><br>
+            </fieldset>
+
+        </form>
+
+    <!--</main>-->
+
+</body>
+</html>
