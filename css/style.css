@@ -29,8 +29,8 @@ ul {
     list-style: square;
 }
 
-td, tr {
-    padding 10px, 5px;
+table {
+    padding: 10px;
     font-size: 1em;
 }
 
