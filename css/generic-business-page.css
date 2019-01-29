@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+}
+
+nav {
+    /*width: 100%;*/
+    background: rgb(210,91,73);
+    color: #fff;
+    padding: 1em;
+    /*border-bottom: 1px rgb(219,91,73);*/
+    box-shadow: 10px 10px 0 0 #fff;
+    border: 1px solid;
+    z-index: 5;
+
+}
+
+header {
+/*width: 100%;*/
+padding: 3em;
+    background: rgb(210,91,73);
+    color: #fff;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+nav a {
+    padding: 1.5%;
+}
+
+button {
+    color: #fff;
+    background: #000;
+    border: none;
+    padding: .8em 1.5em;
+}
+.box1 {
+/*width: 100%;*/
+padding: 5% 15%;
+    background: #fff;
+}
+
+.box2 {
+/*width: 100%;*/
+padding: 5% 15%;
+    background: rgb(241,241,241);
+}
+
+.qotd {
+/*width: 100%;*/
+text-align: center;
+    color: #fff;
+    background: rgb(102,102,102);
+    padding: 7%;
+    letter-spacing: .25px;
+}
+
+
+section .art2,
+section .art1 {
+    font-weight: bold;
+}
+
+.footer-links {
+    padding: 5% 0;
+}
+
+a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:visited {
+    color:#fff;
+    text-decoration: none;
+}
+
+a:hover {
+    background: #fff;
+    color: #000;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    font-size: 2.5em;
+}
+
+button:hover {
+    background: #808080;
+    color: black;
+}
+
+footer img {
+    width: 15px;
+    filter: grayscale(100%);
+}
+
+footer img:hover {
+    filter: opacity(50%) grayscale(100%);
+}
+
+/*#home-link link {*/
+    /*background: #000;*/
+    /*color: #fff;*/
+/*}*/
+
+/*#home-link:visited,*/
+/*#home-link:hover {*/
+    /*background: #000;*/
+    /*color: #fff;*/
+/*}*/
