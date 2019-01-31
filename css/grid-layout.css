@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    display: none;
+}
+
+hr {
+    display: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.row {
+    width: 100%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 992px) {
+    .one-half {
+        width: 50%;
+    }
+
+    .one-third {
+        width: 33.33%;
+    }
+
+    .one-fourth {
+        width: 25%;
+
+    }
+
+    .one-eighth {
+        width: 12.5%;
+
+    }
+    .two-thirds {
+        width: 66.66%;
+    }
+}
+
+.one-half, .one-third, .one-fourth, .one-eighth, .two-thirds {
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    border: black solid 1px;
+    background: lightgrey;
+}
+
