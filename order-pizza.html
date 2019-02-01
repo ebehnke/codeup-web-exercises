@@ -1,10 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Pizza World</title>
 </head>
+
 <body>
 
+<!-- BEGIN BS CONTAINER -->
+<div class="container">
+<!-- BEGIN BS NAV BAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light mr-auto">
+    <a class="navbar-brand" href="#">Pizza world</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Order online<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li>
+                <input class="form-control form-control-sm" type="text" placeholder="Zip code">
+            </li>
+            <li>
+                <button type="button" class="btn btn-light custom-btn">Search stores near you!</button>
+            </li>
+        </ul>
+                <a class="nav-link nav-item custom-right" href="#" tabindex="-1">Sign up <i class="fas fa-user"></i></a>
+    </div>
+</nav>
+<!-- END BOOTSTRAP NAV BAR -->
+
+<!-- BEGIN BS JUMBOTRON -->
+<header class="container p-0">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Pizza World!</h1>
+    </div>
+</header>
+<!-- END BS JUMBOTRON -->
+
+    <h2 class="display-5">Build your own pizza!</h2>
+
+    <!-- BS NAV TABS -->
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+               aria-selected="true"><span class="badge badge-pill badge-secondary">1</span>Size and crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+               aria-selected="false"><span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+               aria-selected="false"><span class="badge badge-pill badge-secondary">3</span>Toppings</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+            <!-- 1 SIZE AND CRUST CARDS -->
+
+            <div class="card border mb-3" style="max-width: 100%;">
+                <div class="card-header custom-cards bg-primary text-white">Choose size and crust</div>
+                <div class="card-body">
+                    <div class="card-header border">Hand tossed</div>
+                    <ul class="list-group list-group-flush border">
+                        <li class="list-group-item">Garlic-seasoned crust with a rich, buttery taste.</li>
+                        <li class="list-group-item"><input type="radio" id="smallHand"> Small (10")
+                        </li>
+                        <li class="list-group-item"><input type="radio" id="mediumHand"> Medium (12")</li>
+                    </ul>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-header border">Crunchy thin crust</div>
+                    <ul class="list-group list-group-flush border">
+                        <li class="list-group-item">Thin enough for the optimum crispy to crunchy ratio.</li>
+                        <li class="list-group-item"><input type="radio" id="mediumThin"> Medium (12")
+                        </li>
+                        <li class="list-group-item"><input type="radio" id="largeThin"> Large (14")</li>
+                    </ul>
+                </div>
+
+                <!-- TAB 1 FOOTER -->
+                <div class="card-footer bg-transparent pb-0">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+                            <a class="nav-link ml-0 pl-0" href="#profile" data-toggle="tab">
+                                <button class="btn btn-primary" type="submit">Next Step <i
+                                        class="fas fa-angle-right"></i></button></a>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+            <!-- 2 CHEESE & SAUCE CARDS -->
+
+            <div class="card border mb-3" style="max-width: 100%;">
+                <div class="card-header border custom-cards bg-primary text-white">Choose cheese & sauce</div>
+                <div class="card-body">
+                    <div class="card-header border">Cheese?</div>
+                    <ul class="list-group list-group-flush border">
+
+                        <li class="list-group-item " id="cheesiness">
+                            <select class="w-100" name="" id="">
+                                <option value="0">Light</option>
+                                <option value="1">Normal</option>
+                                <option value="2">Extra</option>
+                                <option value="3">Double</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-header border">Sauce?</div>
+                    <ul class="list-group list-group-flush border">
+
+                        <li class="list-group-item">
+                            <select class="w-100" name="" id="">
+                                <option value="0">Robust Inspired Tomato Sauce</option>
+                                <option value="1">Marinara Sauce</option>
+                                <option value="2">BBQ Sauce</option>
+                                <option value="3">Alfredo Sauce</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <!-- HOW MUCH -->
+                    <div class="card-header border">How much?</div>
+                    <ul class="list-group list-group-flush border">
+
+                        <li class="list-group-item">
+                            <select class="w-100" name="" id="">
+                                <option value="0">Light</option>
+                                <option value="1">Normal</option>
+                                <option value="2">Extra</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+
+            <!-- TAB 2 FOOTER -->
+            <div class="card-footer bg-transparent border pb-0">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <a class="nav-link mr-0 pr-0" href="#profile" data-toggle="tab">
+                            <button class="btn btn-primary rounded-0" type="submit"><i
+                                    class="fas fa-angle-left"></i> Previous Step</button></a>
+                        <a class="nav-link ml-0 pl-0" href="#profile" data-toggle="tab">
+                            <button class="btn btn-primary border-info rounded-0" type="submit">Next Step <i class="fas fa-angle-right"></i></button></a>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+            <!-- 3 CHOOSE TOPPINGS CARDS -->
+
+            <div class="card border mb-3" style="max-width: 100%;">
+                <div class="card-header border custom-cards bg-primary text-white">Choose toppings</div>
+                <div class="card-body">
+                    <div class="card-header border">Choose meats</div>
+                    <ul class="list-group list-group-flush border">
+
+                        <li class="list-group-item">
+                            <input type="checkbox"> Beef
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox"> Ham
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox"> Philly Steak
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox"> Bacon
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="card-header border">Choose non-meats</div>
+                    <ul class="list-group list-group-flush border">
+
+                        <li class="list-group-item">
+                            <input type="checkbox"> Green Peppers
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox"> Mushrooms
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox"> Onions
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox"> Jalapeno Peppers
+                        </li>
+                    </ul>
+                    </div>
+
+                <!-- TAB 3 FOOTER -->
+                <div class="card-footer bg-transparent border pb-0">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+                            <a class="nav-link ml-0 pl-0" href="#profile" data-toggle="tab">
+                                <button class="btn btn-primary" type="submit">Checkout <i class="fas fa-shopping-cart"></i></button></a>
+                        </ul>
+                    </nav>
+                </div>
+                </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+</body>
+
+<!-- END BS NAV TABS -->
+
+<!-- END BS CONTAINER -->
+
+
+
+
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
