@@ -7,3 +7,8 @@
 // example input: getSmallerSegment("Codeup", 3)
 // example output: "cod"
 
+function isShortWord(aString) {
+    aString < 5
+}
+
+console.log(isShortWord(asdf));
