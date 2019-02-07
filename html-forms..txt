@@ -1,2 +1,0 @@
-form method defaults to GET
-button type defaults to Submit
