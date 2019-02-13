@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Title</title>
+</head>
+
+<body>
+
+<script>
+    function testFunction(nameOfFunction, functionWithInput, expectedOutput) {
+        if (nameOfFunction("") === expectedOutput){
+            console.log("true");
+            return true;
+        } else {
+            console.log("false");
+            return false;
+        }
+    }
+    // console.log(returnInputAsOutput());
+    // console.log(returnInputAsOutput("input"));
+    // console.log("input");
+    testFunction(returnInputAsOutput, "bob", "bob");
+
+    // console.log(returnInputAsOutput());
+    // console.log(testFunction());
+    // console.log(testFunction(returnInputAsOutput()));
+
+    function returnInputAsOutput(input) {
+        return input;
+    }
+
+
+</script>
+</body>
+</html>
+
+================================= BUILD A TESTING FUNCTION
+Create a new static web project in IntelliJ called "custom-assert"
+Pair up!
+With your partner, figure out how to build a function that tests other functions.
+This testing function should be defined with three parameters:
+1. the name of the function to test
+2. an input to the function to test
+3. the expected output of the test function when passed the input
+The function should return true or false based on whether or not the passed function returns the passed output based on the passed input.
+Test your testing function with the following flawed function which should return false:
+
+
+function returnInputAsOutput(input) {
+return "input";
+}
+
+
+What should be fixed to make returnInputAsOutput work correctly?
+Collapse
+
+
+
+Message Input

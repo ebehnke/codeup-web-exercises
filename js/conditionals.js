@@ -489,6 +489,14 @@
 // - accept both abbreviations and full names of the months
 //
 
+function season(input) {
+
+}
+
+
+
+
+
 // function season(input) {
 //     input = prompt("Enter a season");
 //     if (input === "Spring") {
