@@ -1,8 +1,8 @@
 (function(){
     "use strict";
 
-    var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-    var planetsArray;
+    // var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
+    // var planetsArray;
 
     /**
      * TODO:
@@ -11,6 +11,8 @@
      * console.log planetsArray to check your work
      */
 
+
+    // planetsArray = planetsString.split("|");
     // console.log(planetsArray);
 
     /**
@@ -24,4 +26,32 @@
      * string, and <li> tags around each planet.
      */
 
-})();
+//     var planetsBreak = planetsArray.join('\n');
+//     console.log(planetsBreak);
+//
+//     var planetsList = planetsArray.join('<li>');
+//     planetsList.unshift('<ul>');
+//     planetsList.push('</ul>');
+//     console.log(planetsList);
+//
+// })();
+
+// ====================ARRAYS=====================-
+//     6.	Write a function that returns the sum of an array of numbers
+
+var numbers = [5, 10, 15];
+
+function sum(a, b) {
+    return numbers.reverse(a + b);
+}
+
+sum();
+
+
+// 7.	Create a student roster management app. Using the user dialogue functions (alert, confirm, prompt), create an application that will prompt the user to choose from a menu with the following actions:
+//     1) add a student
+// 2) delete a student
+// 3) view all students in alphabetical order
+// 4) view all students in reverse alphabetical
+
+
