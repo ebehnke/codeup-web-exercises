@@ -115,7 +115,7 @@
     //     'saturday'
     // ];
     //
-    // var w = Math.floor(Math.random() * 7);
+    // var w = Math.floor(Math.random() * 7); //daysOfTheWeek
     // console.log(w);
     //
     // function randomDay() {
@@ -127,19 +127,19 @@
 // – someFunction("a") // returns 1
 // – someFunction("z") // returns 26
 
-    // var alphabet = ['0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    //
-    // var letter = prompt('Enter a letter').toLowerCase();
-    //
-    // function alpha() {
-    //     for (var i = 0; i < alphabet.length; i++) {
-    //         if (letter === alphabet[i]) {
-    //             return console.log(letter + " is the number " + i)
-    //         }
-    //     }
-    // }
-    //
-    // alpha();
+    var alphabet = ['', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+    var letter = prompt('Enter a letter').toLowerCase();
+
+    function alpha() {
+        for (var i = 0; i < alphabet.length; i++) {
+            if (letter === alphabet[i]) {
+                return console.log(letter + " is the number " + i)
+            }
+        }
+    }
+
+    alpha();
 
 //     4.  Create a function that returns the longest string in a given array of string elements.
 
@@ -181,10 +181,10 @@
 // – exampleFunction(arr1, arr2) // returns true
 
 
-    var numArr1 = [10, 10, 10, 10];
-    var numArr2 = [5, 15, 20];
-
-    console.log(numArr2.reduce((total, amount) >= total + amount);
+    // var numArr1 = [10, 10, 10, 10];
+    // var numArr2 = [5, 15, 20];
+    //
+    // console.log(numArr2.reduce((total, amount) >= total + amount);
 
     // function compare(arr1, arr2) {
     //     // for(var i = 0; i < arr1.reduce() && arr2.reduce(); i++) {

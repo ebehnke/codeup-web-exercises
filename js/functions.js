@@ -520,11 +520,11 @@
 
 // Write a function called reverseString(string) that reverses a string
 
-function reverseString(string) {
-    return reverse(string);
-}
-
-console.log(reverseString("asdf"));
+// function reverseString(string) {
+//     return reverse(string);
+// }
+//
+// console.log(reverseString("asdf"));
 
 // Make a function named absoluteValue(number) that returns the absolute value of a number.
 
