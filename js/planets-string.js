@@ -26,26 +26,36 @@
      * string, and <li> tags around each planet.
      */
 
-//     var planetsBreak = planetsArray.join('\n');
-//     console.log(planetsBreak);
-//
-//     var planetsList = planetsArray.join('<li>');
-//     planetsList.unshift('<ul>');
-//     planetsList.push('</ul>');
-//     console.log(planetsList);
-//
+    var planetsBreak = planetsArray.join('\n');
+    console.log(planetsBreak);
+
+    var planetsList = planetsArray.join('<li></li>');
+    console.log(planetsList);
+
 // })();
 
 // ====================ARRAYS=====================-
 //     6.	Write a function that returns the sum of an array of numbers
 
-var numbers = [5, 10, 15];
+// var numbers = [5, 10, 15];
 
-function sum(a, b) {
-    return numbers.reverse(a + b);
-}
+// function sum(a, b) {
+//     return numbers.reverse(a + b);
+// }
+//
+// sum();
 
-sum();
+    var numbers = [5, 10, 15, 10];
+    var reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+    console.log(numbers.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+    console.log(numbers.reduce(reducer, 5));
+// expected output: 15
+
 
 
 // 7.	Create a student roster management app. Using the user dialogue functions (alert, confirm, prompt), create an application that will prompt the user to choose from a menu with the following actions:
