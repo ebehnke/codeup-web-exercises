@@ -44,14 +44,14 @@
         var listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
-        // var odd = document.getElementsByClassName('odd');
-        // var even = document.getElementsByClassName('even');
-        // odd.style.color = '#888';
-
         // TODO: Set text color of li with dbid = 1 to blue
         for (var i = 0; i < listItems.length; i++) {
             var dbId = listItems[i].getAttribute("data-dbid");
-            listItems[i].style.color = '#0f0';
+            if (dbId == 1){
+                listItems[i].style.color = '#0f0';
+            } else if (i % 2 === 1){
+                listItems[i].style.color = '#888';
+            }
         }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
