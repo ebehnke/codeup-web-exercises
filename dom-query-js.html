@@ -25,6 +25,11 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id='btn1' type="submit">Button 1</button>
+<button id='btn2' type="submit">Button 2</button>
+<button id='btn3' type="submit">Button 3</button>
+<button id='btn4' type="submit">Button 4</button>
+
 <script>
     (function() {
         "use strict";
@@ -32,33 +37,84 @@
         var mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = 'Javascript is Cool';
+        // mainHeader.innerHTML = 'Javascript is Cool';
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = '#00f';
+        // subHeader.style.color = '#00f';
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        for (var i = 0; i < listItems.length; i++) {
-            var dbId = listItems[i].getAttribute("data-dbid");
-            if (dbId == 1){
-                listItems[i].style.color = '#0f0';
-            } else if (i % 2 === 1){
-                listItems[i].style.color = '#888';
-            }
-        }
+        // for (var i = 0; i < listItems.length; i++) {
+        //     var dbId = listItems[i].getAttribute("data-dbid");
+        //     if (dbId == 1){
+        //         listItems[i].style.color = '#0f0';
+        //     } else if (i % 2 === 1){
+        //         listItems[i].style.color = '#888';
+        //     }
+        // }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!";
+        // subParagraphs[0].innerText = "Mission Accomplished!";
+
+        //
+
+        var button1 = document.getElementById('btn1');
+
+        var button1Click = function (e) {
+            mainHeader.innerHTML = 'Javascript is Cool';
+        };
+
+        button1.addEventListener('click', button1Click, false);
+
+        //
+
+        var button2 = document.getElementById('btn2');
+
+        var button2Click = function (e) {
+            subHeader.style.color = '#00f';
+        };
+
+        button2.addEventListener('click', button2Click, false);
+
+        //
+
+        var button3 = document.getElementById('btn3');
+
+        var button3Click = function (e) {
+            for (var i = 0; i < listItems.length; i++) {
+                var dbId = listItems[i].getAttribute("data-dbid");
+                if (dbId == 1){
+                    listItems[i].style.color = '#0f0';
+                } else if (i % 2 === 1){
+                    listItems[i].style.color = '#888';
+                }
+            }        };
+
+        button3.addEventListener('click', button3Click, false);
+
+        //
+
+        var button4 = document.getElementById('btn4');
+
+        var button4Click = function (e) {
+            subParagraphs[0].innerText = "Mission Accomplished!";
+        };
+
+        button4.addEventListener('click', button4Click, false);
+
+        //
+
+
+
     })();
 </script>
 </body>
