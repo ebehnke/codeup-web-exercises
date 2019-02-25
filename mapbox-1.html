@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Mapbox</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+
+</head>
+
+<body>
+
+    <div id='map' style='width: 100%; height: 400px;'></div>
+
+    <!-- Mapbox API -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <!-- Mapbox Token Variable-->
+    <script src="js/keys.js"></script>
+
+    <!-- Mapbox Custom-->
+    <script>
+        mapboxgl.accessToken = mapboxglAccessToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 15,
+            center: [-121.786863, 47.495462]});
+
+        <!-- Reload to Center of USA -->
+        var count = 0;
+        var max = 3;
+        var interval = 1000; // interval time in milliseconds
+        var intervalId = setInterval(function () {
+            if (count >= max) {
+                clearInterval(intervalId);
+                map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v9',
+                    zoom: 3,
+                    center: [-98.5795, 39.8283]});
+            } else {
+                count++;
+            }
+        }, interval);
+    </script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 "use strict";
 
 /* Rules:
-    -no eval() function
+    - no eval() function
  */
 
 
