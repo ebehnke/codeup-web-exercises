@@ -25,28 +25,41 @@
     <!-- Mapbox Custom-->
     <script>
         mapboxgl.accessToken = mapboxglAccessToken;
+
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 15,
+            zoom: 4,
             center: [-121.786863, 47.495462]});
 
+        var marker = new mapboxgl.Marker()
+            .setLngLat([-98.4916, 29.4260])
+            .addTo(map);
+
         <!-- Reload to Center of USA -->
-        var count = 0;
-        var max = 3;
-        var interval = 1000; // interval time in milliseconds
-        var intervalId = setInterval(function () {
-            if (count >= max) {
-                clearInterval(intervalId);
-                map = new mapboxgl.Map({
-                    container: 'map',
-                    style: 'mapbox://styles/mapbox/streets-v9',
-                    zoom: 3,
-                    center: [-98.5795, 39.8283]});
-            } else {
-                count++;
-            }
-        }, interval);
+        // var count = 0;
+        // var max = 3;
+        // var interval = 1000; // interval time in milliseconds
+        // var intervalId = setInterval(function () {
+        //     if (count >= max) {
+        //         clearInterval(intervalId);
+        //         map = new mapboxgl.Map({
+        //             container: 'map',
+        //             style: 'mapbox://styles/mapbox/streets-v9',
+        //             zoom: 3,
+        //             center: [-98.5795, 39.8283]});
+        //     } else {
+        //         count++;
+        //     }
+        // }, interval);
+
+        <!-- More efficient way -->
+        // setTimeout(function () {
+        //     map
+        //         .setZoom(3)
+        //         .setCenter([-98.5795, 39.8283])
+        //         .setStyle('mapbox://styles/mapbox/satellite-v9');
+        // }, 3000);
     </script>
 
 </body>
