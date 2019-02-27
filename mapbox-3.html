@@ -35,9 +35,13 @@
         zoom: 14,
         center: [-77.0230, 38.8896]});
 
-    var marker = new mapboxgl.Marker()
-        .setLngLat([-77.0502, 38.8893])
-        .addTo(map);
+    var marker = new mapboxgl.Marker();
+        marker.setLngLat([-77.0502, 38.8893]);
+        marker.addTo(map);
+
+    var popup = new mapboxgl.Popup();
+        popup.setText("<p>Lincoln Memorial</p>");
+        marker.setPopup(popup);
 
 </script>
 
