@@ -13,51 +13,93 @@
     <link rel="stylesheet" href="">
 
 
-    <title>Title</title>
+    <title>jQuery Exercise</title>
 </head>
 
 <body>
 
-<div class="divClass" id="firstDiv">
+<div>
 
-    <h1 id="firstHeader" class="header highlight">
+    <h1 class="header">
         Header
     </h1>
 
-    <p class="content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eum magnam mollitia nostrum omnis, rem ut. Non nulla quasi vero.
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eum magnam mollitia nostrum omnis, rem
+        ut. Non nulla quasi vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam asperiores delectus dicta dolores eligendi eum laborum, nostrum odio officia omnis optio provident rerum sint sit. Excepturi id magni vitae.
     </p>
 
-    <ul class="listClass">Unordered List
+    <ul>Unordered List
 
-        <li class="highlight">One</li>
+        <li>One</li>
         <li>Two</li>
         <li>Three</li>
-        <li class="underline">Four</li>
+        <li>Four</li>
         <li>Five</li>
 
     </ul>
+
+    <input type="text" class="test"> <input type="password" class="test">
 </div>
-
-
-<script>
-</script>
 
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
 <!-- Local JS -->
 <script>
     "use strict";
     $(document).ready(function() {
 
+        // $('.codeup').css('border', '1px solid #F00');
+        //
+        // $('li').css('font-size', '20px');
+        //
+        // $('h1', 'p', 'li');
+        //
+        // alert($('div').html);
+        //
+        // alert(document.getElementsByTagName('div'));
+        //
+        // // var i = 0;
+        //
+        // $('.test').keypress(function (e) {
+        //     console.log(e);
+        // });
 
-        $('.underline')
+        $('.header').click(function () {
+            $(this).css('background-color', '#F00');
+        })
+
+        // Remove your custom jQuery code from previous exercises.
+
+         //   Add jQuery code that will change the background color of a h1 element when clicked.
+         //
+         //    Make all paragraphs have a font size of 18px when they are double clicked.
+
+        $('p').dblclick(function () {
+            $(this).css('font-size', '18px')
+        })
+
+         //    Set all li text color to red when the mouse is hovering, reset to black when it is not.
+
+        // $('li').hover(function () {
+        //
+        //     $(this).css('color', 'red');
+        //     function () {
+        //         $(this).css('color', 'black');
+        //     }
+        // })
+
+        $( "li" ).hover(
+            function() {
+                $( this ).css('color', 'red');
+            }, function() {
+                $( this ).css('color', 'black');
+            }
+        );
 
 
-
-        // alert( 'The DOM has finished loading!' );
+        // console.warn( 'The DOM has finished loading!' );
         // window.onload = function() {
         //     alert( 'The page has finished loading!' );
         // };

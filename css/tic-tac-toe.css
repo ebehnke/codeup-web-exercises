@@ -1,0 +1,188 @@
+/*@import url(https://fonts.googleapis.com/css?family=PT+Mono);*/
+
+/*!*$lt-gray: #e5e5e5;*!*/
+/*!*$dk-gray: #333;*!*/
+/*!*$x: #10A0E1;*!*/
+/*!*$o: #E110A0;*!*/
+/*!*$cell: 30vmin;*!*/
+
+/*html {*/
+    /*box-sizing: border-box;*/
+/*}*/
+/**, *:before, *:after {*/
+    /*box-sizing: inherit;*/
+/*}*/
+/*body {*/
+    /*background-color: gray;*/
+/*}*/
+/*.container {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*width: 450px;*/
+    /*!*width: $cell * 3;*!*/
+    /*height: 450px;*/
+    /*!*height: $cell * 3;*!*/
+    /*margin: auto;*/
+    /*!*background-color: $lt-gray;*!*/
+/*}*/
+/*.row {*/
+    /*height: 150px;*/
+    /*!*height: $cell;*!*/
+/*}*/
+/*.cell {*/
+    /*float: left;*/
+    /*width: 150px;*/
+    /*!*width: $cell;*!*/
+    /*height: 150px;*/
+    /*!*height: $cell;*!*/
+    /*position: relative;*/
+/*}*/
+/*!*.x:before {*!*/
+    /*!*position: absolute;*!*/
+    /*!*top: 0;*!*/
+    /*!*left: 75px;*!*/
+    /*!*left: 15vmin;*!*/
+    /*!*content: "";*!*/
+    /*!*display: block;*!*/
+    /*!*width: 7px;*!*/
+    /*!*width: 1.5vmin;*!*/
+    /*!*height: 150px;*!*/
+    /*!*height: $cell;*!*/
+    /*!*background-color: $x;*!*/
+    /*!*border-radius: 5px;*!*/
+    /*!*-webkit-transform: rotate(-45deg);*!*/
+    /*!*-ms-transform: rotate(-45deg);*!*/
+    /*!*transform: rotate(-45deg);*!*/
+/*!*}*!*/
+/*!*.x:after {*!*/
+    /*!*position: absolute;*!*/
+    /*!*top: 0;*!*/
+    /*!*left: 75px;*!*/
+    /*!*left: 15vmin;*!*/
+    /*!*content: "";*!*/
+    /*!*display: block;*!*/
+    /*!*width: 7px;*!*/
+    /*!*width: 1.5vmin;*!*/
+    /*!*height: 150px;*!*/
+    /*!*height: $cell;*!*/
+    /*!*background-color: $x;*!*/
+    /*!*border-radius: 5px;*!*/
+    /*!*-webkit-transform: rotate(45deg);*!*/
+    /*!*-ms-transform: rotate(45deg);*!*/
+    /*!*transform: rotate(45deg);*!*/
+/*!*}*!*/
+/*!*.o {*!*/
+    /*!*position: absolute;*!*/
+    /*!*top: 15px;*!*/
+    /*!*top: 3vmin;*!*/
+    /*!*left: 15px;*!*/
+    /*!*left: 3vmin;*!*/
+    /*!*width: 120px;*!*/
+    /*!*width: 24vmin;*!*/
+    /*!*height: 120px;*!*/
+    /*!*height: 24vmin;*!*/
+    /*!*border: 8px solid $o;*!*/
+    /*!*border: 1.5vmin solid $o;*!*/
+    /*!*border-radius: 50%;*!*/
+/*!*}*!*/
+/*!*.hline {*!*/
+    /*!*position: absolute;*!*/
+    /*!*height: 5px;*!*/
+    /*!*height: 1vmin;*!*/
+    /*!*width: 440px;*!*/
+    /*!*width: 88vmin;*!*/
+    /*!*left: 5px;*!*/
+    /*!*left: 1vmin;*!*/
+    /*!*border-radius: 50px;*!*/
+    /*!*background-color: $dk-gray;*!*/
+/*!*}*!*/
+/*.line1 {*/
+    /*top: 147.5px;*/
+    /*top: 29.5vmin;*/
+/*}*/
+/*.line2 {*/
+    /*bottom: 147.5px;*/
+    /*bottom: 29.5vmin;*/
+/*}*/
+/*.vline {*/
+    /*position: absolute;*/
+    /*width: 5px;*/
+    /*width: 1vmin;*/
+    /*height: 440px;*/
+    /*height: 88vmin;*/
+    /*top: 5px;*/
+    /*top: 1vmin;*/
+    /*border-radius: 50px;*/
+    /*background-color: $dk-gray;*/
+/*}*/
+/*.line3 {*/
+    /*left: 147.5px;*/
+    /*left: 29.5vmin;*/
+/*}*/
+/*.line4 {*/
+    /*right: 147.5px;*/
+    /*right: 29.5vmin;*/
+/*}*/
+/*!*.pointer {*!*/
+    /*!*cursor: pointer;*!*/
+/*!*}*!*/
+/*!*.overlay {*!*/
+    /*!*position: fixed;*!*/
+    /*!*left: 0px;*!*/
+    /*!*top: 0px;*!*/
+    /*!*width:100%;*!*/
+    /*!*height:100%;*!*/
+    /*!*text-align:center;*!*/
+    /*!*background-color: rgba(0,0,0,0.7);*!*/
+
+/*!*}*!*/
+/*!*.modal{*!*/
+    /*!*color: $dk-gray;*!*/
+    /*!*position: absolute;*!*/
+    /*!*top: 50%;*!*/
+    /*!*left: 50%;*!*/
+    /*!*-webkit-transform: translate(-50%, -50%);*!*/
+    /*!*-ms-transform: translate(-50%, -50%);*!*/
+    /*!*transform: translate(-50%, -50%);*!*/
+    /*!*display: inline-block;*!*/
+    /*!*background-color: $lt-gray;*!*/
+    /*!*padding:15px;*!*/
+    /*!*text-align:center;*!*/
+    /*!*border-radius: 5px;*!*/
+/*!*//box-shadow: 0 0 5px rgba(0,0,0,0.3);*!*/
+/*!*}*!*/
+/*!*button {*!*/
+    /*!*cursor: pointer;*!*/
+    /*!*border-radius: 5px;*!*/
+    /*!*margin: 10px;*!*/
+    /*!*padding: 5px 20px 10px 20px;*!*/
+    /*!*padding: 1vmin 4vmin 2vmin 4vmin;*!*/
+    /*!*font-size: 300%;*!*/
+    /*!*font-size: 10vmin;*!*/
+    /*!*background-color: transparent;*!*/
+    /*!*outline: none;*!*/
+    /*!*border-style: solid;*!*/
+    /*!*font-family: 'PT Mono', sans;*!*/
+/*!*&:hover {*!*/
+     /*!*box-shadow: 0 0 3px rgba(0,0,0,0.3);*!*/
+ /*!*}*!*/
+/*!*}*!*/
+/*!*.overlay-on .container{*!*/
+    /*!*-webkit-filter: blur(5px);*!*/
+    /*!*filter: blur(5px);*!*/
+/*!*}*!*/
+/*!*.x-color {*!*/
+    /*!*color: $x;*!*/
+    /*!*border-color: $x;*!*/
+/*!*}*!*/
+/*!*.o-color {*!*/
+    /*!*color: $o;*!*/
+    /*!*border-color: $o;*!*/
+/*!*}*!*/
+/*!*.winner {font-size: 150%;}*!*/
+/*!*p {margin: 5px;}*!*/
+
+
