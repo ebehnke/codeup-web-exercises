@@ -1,68 +1,95 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <title>Tic Tac Two</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Local CSS -->
-
-
-    <title>Tic Tac Two</title>
     <style>
-        .row .col{
-            background-color: grey;
+
+        .box {
+            float:left;
+            width: 30%;
+            padding-bottom: 30%; /* = width for a 1:1 aspect ratio */
+            margin:1.66%;
+            background-color: #1E1E1E;
+        }
+
+        .container {
+            /*height: 500px*/
         }
     </style>
 </head>
 
 <body>
-    <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 
 
-<div class="container text-center hover-test">
-    <div class="row p-3 hover-test">
-        <div class="col-1 hover-test"></div>
-        <div class="col hover-test">x</div>
-        <div class="col">x</div>
-        <div class="col">x</div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row p-3">
-        <div class="col-1"></div>
-        <div class="col">x</div>
-        <div class="col">x</div>
-        <div class="col">x</div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row p-3">
-        <div class="col-1"></div>
-        <div class="col">x</div>
-        <div class="col">x</div>
-        <div class="col">x</div>
-        <div class="col-1"></div>
-    </div>
-</div>
+    <main class="container">
+        <!-- 1st row */ -->
+        <div class="row ">
+            <div class="col">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </main>
+    
+<!--<div class="container text-center hover-test">-->
+    <!--<div class="row p-3 hover-test">-->
+        <!--<div class="col-1 hover-test"></div>-->
+        <!--<div class="col hover-test">x</div>-->
+        <!--<div class="col">x</div>-->
+        <!--<div class="col">x</div>-->
+        <!--<div class="col-1"></div>-->
+    <!--</div>-->
+    <!--<div class="row p-3">-->
+        <!--<div class="col-1"></div>-->
+        <!--<div class="col">x</div>-->
+        <!--<div class="col">x</div>-->
+        <!--<div class="col">x</div>-->
+        <!--<div class="col-1"></div>-->
+    <!--</div>-->
+    <!--<div class="row p-3">-->
+        <!--<div class="col-1"></div>-->
+        <!--<div class="col">x</div>-->
+        <!--<div class="col">x</div>-->
+        <!--<div class="col">x</div>-->
+        <!--<div class="col-1"></div>-->
+    <!--</div>-->
 
-
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+<!-- Custom JS -->
 <script>
     "use strict";
     $(document).ready(function(){
 
         $('*').css('border', '1px solid #000');
-
-        $('h1').css('color', 'red');
-
-        $('.hover-test').hover(function() {
-                $(this).css('background-color:', 'black');
-            }, function() {
-                $(this).css('background-color', 'black');
-            }
-        );
+        //
+        // $('h1').css('color', 'red');
+        //
+        // $('.hover-test').hover(function() {
+        //         $(this).css('background-color:', 'black');
+        //     }, function() {
+        //         $(this).css('background-color', 'black');
+        //     }
+        // );
 
 
 
