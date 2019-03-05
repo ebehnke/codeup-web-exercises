@@ -8,7 +8,7 @@
 
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Local CSS -->
     <style>
@@ -24,6 +24,16 @@
 </head>
 
 <body>
+
+<div class="hideOnX">
+    <span class="spanX">x</span>
+    <h1>Would you like to sign up for our newsletter?</h1>
+</div>
+
+<div class="hideOnX showAfterEight alert alert-info modal-dialog">
+    <!--<span class="spanX">x</span>-->
+    <h2>Would you like to register for the site?</h2>
+</div>
 
 <dl>
     <dt>FAQ #1</dt>
@@ -107,7 +117,7 @@
     <li>Park 5</li>
 </ul>
 
-<button class="yellow-btn">Last LI to Yellow</button>
+<button id="high-light-btn">Last LI to Yellow</button>
 
 <!-- jQuery -->
 <script src="js/jquery-3.3.1.js"></script>
@@ -131,13 +141,54 @@ console.warn( 'The DOM has finished loading!' );
     });
 
     // Begin Traversing Exercise //
+
+    // Create a button that, when clicked, makes the last li in each ul have a yellow background.
+
+    $('#high-light-btn').click(function () {
+        // $('ul').children().last().css('background-color', 'yellow')
+        $('ul').each(function (index, element) {
+            $(element).children().last().css('background-color', 'yellow');
+        })
+    });
+
+
+    // When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+
+    // $('h3').click(function () {
+    //     $(this).next().css('font-weight', 'bold'); //this or e.target could work
+    // });
+
+
+    // When any list item is clicked, first li of the parent ul should have a font color of blue.
+
+    $('li').click(function (i, e) {
+        $(this).parent().children().first().css('color', 'blue');
+    });
+
+    ///////////////////////////////////// Animations
+
+    $('.spanX').on('click', function () {
+        $('.hideOnX').toggle();
+    });
+
+    $('ul').hide();
+
+    $('h3').on('click', function () {
+        $(this).next().slideToggle();
+    })
+
+    $('.showAfterEight').hide();
+
+    setTimeout(function () {
+        $('.showAfterEight').show();
+    }, 3000)
 });
 </script>
 
 
 <!-- Optional JavaScript -->
 <!-- Popper.js, then Bootstrap JS -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

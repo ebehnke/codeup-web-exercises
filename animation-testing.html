@@ -8,12 +8,45 @@
     <!-- Font Awesome CSS -->
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Local CSS -->
-    <style></style>
+    <style>
+        .square {
+            height: 100px;
+            width: 100px;
+            background: gray;
+        }
+
+        .rectangle {
+            height: 50px;
+            width: 200px;
+            background: coral;
+        }
+
+        .lBottom {
+            height: 50px;
+            width: 150px;
+            background: blue;
+            margin: 0;
+        }
+
+        .lTop {
+            height: 50px;
+            width: 50px;
+            background: blue;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
+
+<div class="square float-left moveableBox"></div>
+<div class="rectangle float-right"></div>
+<div class="lTop"></div>
+<br><div class="lBottom"></div>
+
+
 
 
 <!-- jQuery -->
@@ -23,14 +56,49 @@
 <script>
     "use strict";
     $(document).ready(function () {
-        console.warn('The DOM has finished loading in HTML!');
+        console.warn('The DOM has finished loading!');
+
+        $(document).on('keyup', function (e) {
+            if (e.key === ('ArrowLeft')) {
+                $('.moveableBox').animate({
+                    'marginLeft': "-=30px" //moves left
+                }, 'fast');
+            }
+        });
+        $(document).on('keyup', function (e) {
+            if (e.key === ('ArrowRight')) {
+                $('.moveableBox').animate({
+                    'marginLeft': "+=30px" //moves right
+                }, 'fast');
+            }
+        });
+        $(document).on('keyup', function (e) {
+            if (e.key === ('ArrowDown')) {
+                $('.moveableBox').animate({
+                    'marginTop': "+=30px" //moves down
+                }, 'fast');
+            }
+        });
+        $(document).on('keyup', function (e) {
+            if (e.key === ('ArrowUp')) {
+                $('.moveableBox').animate({
+                    'marginTop': "-=30px" //moves up
+                }, 'fast');
+            }
+        });
+
+
+
+
+
+    });
 
 </script>
 
 <!-- Optional JavaScript -->
 <!-- Popper.js -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-<!-- Bootstrap JS -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <!--Bootstrap JS-->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
