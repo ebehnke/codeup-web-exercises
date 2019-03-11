@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <!-- Font Awesome CSS -->
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- Local CSS -->
+    <style></style>
+</head>
+
+<body>
+<h1 id="heading-1" class="heading">heading 1</h1>
+<div id="div-1">
+    Div 1
+    <p>Paragragph 1 within a div. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias dignissimos
+       eligendi ipsum natus non odio temporibus. Culpa, deleniti hic!</p>
+    <p>Paragraph 2 within a div. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi exercitationem laudantium natus pariatur, saepe suscipit? Illum quae sit ullam voluptatibus.</p>
+</div>
+<div id="div-2">
+    Div 2
+<ul id="list-1">List 1
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li>item 4</li>
+</ul>
+<ul id="list-2">List 2
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li>item 4</li>
+</ul>
+    <input type="text" id="addItem">
+</div>
+<button id="btn-1">btn-1</button>
+<button id="btn-2">btn-2</button>
+
+
+
+<!-- jQuery -->
+<script src="js/jquery-3.3.1.js"></script>
+
+<!-- Custom JS -->
+<script>
+"use strict";
+$(document).ready(function () {
+console.warn('The DOM has finished loading in HTML!');
+
+// append list items
+    $('#addItem').keyup(function (e) {
+        var code = e.which;
+        if(code == 13){
+            e.preventDefault();
+            $('#list-1').append('<li>' + e.target.value + '</li>');
+            $('#addItem').val('')
+        }
+
+    });
+
+
+
+
+
+
+
+
+
+// //Returns the first <li> item in our HTML
+//     var listItem = document.getElementsByTagName('li')[0];
+//
+//     console.log($('li')[0]);
+
+
+//     //displays innerText of our first <li>
+//     var listItemClick = function(event){
+//         console.log(listItem.innerText);
+//     };
+//     console.log($('li')[0].innerText);
+
+//
+//     //logs innerText of first <li> item every time it is clicked
+//     listItem.addEventListener('click',listItemClick, false);
+
+        $('#btn-1').on('click', function () {
+            console.log($('li')[0].innerText);
+        })
+//
+//     //target buttons inside of our paragraph
+//     var button1 = document.getElementById('one');
+//     var button2 = document.getElementById('two');
+//
+//
+//     // var paragraph = document.getElementById('sub');
+//     // var span = document.getElementById('word');
+//
+//     //function to be used for button1
+//     var buttonClick = function(event){
+//         alert("You clicked the button!");
+//     };
+//
+//     //function to be used on button2
+//     //clicking button2 should remove listener on button1
+//     var removeButtonOne = function(event){
+//         button1.removeEventListener('click',buttonClick,false);
+//         alert('You removed the listener from Button 1');
+//     };
+//
+//     // var paragraphClick = function(e){
+//     //     alert("You clicked the paragraph!");
+//     // };
+//
+//     // var spanClick = function(e){
+//     //     alert("You clicked the span!");
+//     // };
+//
+//     button1.addEventListener('click', buttonClick, false);
+//     button2.addEventListener('click', removeButtonOne, false);
+//
+//     // paragraph.addEventListener('click', paragraphClick, false);
+//     // span.addEventListener('click', spanClick, false);
+
+});
+
+</script>
+
+<!-- Optional JavaScript -->
+<!-- Popper.js -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+<!-- Bootstrap JS -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+</body>
+</html>

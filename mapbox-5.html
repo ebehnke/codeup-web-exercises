@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <!-- Font Awesome CSS -->
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Local CSS -->
+</head>
+
+<body>
+
+<div id='map' style='width: 100%; height: 400px;'></div>
+
+<!-- jQuery -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- Mapbox API -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- Mapbox Token Variable-->
+<script src="js/keys.js"></script>
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<!-- Mapbox Custom-->
+<script>
+"use strict";
+$(document).ready(function () {
+    console.warn('The DOM has finished loading in HTML!');
+
+    mapboxgl.accessToken = mapboxglAccessToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-122.4443, 47.2529]
+    });
+
+    // Tacoma Geocode
+    geocode("Tacoma, Washington", mapboxglAccessToken).then(function (result) {
+        map.setCenter(result);
+        map.setZoom(13);
+    });
+
+    markers = [
+        // GTI Marker //
+        marker1 = new mapboxgl.Marker().setLngLat([-122.4704, 47.2556]).addTo(map),
+        // Met Marker //
+        marker2 = new mapboxgl.Marker().setLngLat([-122.4833, 47.2551]).addTo(map),
+        // Wal-Mart Marker //
+        marker3 = new mapboxgl.Marker().setLngLat([-122.4785, 47.2399]).addTo(map),
+        // Random Marker //
+        marker4 = new mapboxgl.Marker().setLngLat([-122.4785, 47.2499]).addTo(map)
+    ];
+
+    popups = [
+        // Popup for GTI //
+        popup1 = new mapboxgl.Popup().setText("Gateway to India"),
+        // Popup for Met //
+        popup2 = new mapboxgl.Popup().setText("Coffee"),
+        // Popup for Wal-Mart //
+        popup3 = new mapboxgl.Popup().setText("Wal-Mart"),
+        // Popup for Random //
+        popup4 = new mapboxgl.Popup().setText("Random Location")
+    ];
+
+    marker1.setPopup(popup1);
+    marker2.setPopup(popup2);
+    marker3.setPopup(popup3);
+    marker4.setPopup(popup4);
+
+    var eats = [
+        {
+            name: 'Gateway to India',
+            popupText: 'Sonic is great!',
+            address: '1 Sonic Ln.',
+            marker: markers[0],
+            popup: popup[0],
+        },
+        {
+            name: 'Gateway to India',
+            popupText: 'Sonic is great!',
+            address: '12 Sonic Ln.',
+            marker: markers[1],
+            popup: popup[1],
+        },
+        {
+            name: 'Gateway to India',
+            popupText: 'Sonic is great!',
+            address: '123 Sonic Ln.',
+            marker: markers[2],
+            popup: popup[2],
+        },
+        {
+            name: 'Gateway to India',
+            popupText: 'Sonic is great!',
+            address: '1234 Sonic Ln.',
+            marker: markers[3],
+            popup: popup[3],
+        }
+    ];
+
+    eats.forEach(function (element, index, array) {
+        console.log(element.address);
+        // map.setCenter([element._lngLat]);
+        // console.log(element._lngLat.lng);
+    });
+});
+
+
+</script>
+
+<!-- Optional JavaScript -->
+<!-- Popper.js -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

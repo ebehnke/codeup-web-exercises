@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>Online Store</title>
+    <style>
+        * {
+            border: 2px solid gray;
+            margin: 3px;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,26 +24,40 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
+<br>
+<!--<form id="postForm" action="data/inventory.json">-->
+    <!--<input type="text" id="title" placeholder="Title">-->
+    <!--<br>-->
+    <!--<input type="text" id="quantity" placeholder="Quantity">-->
+    <!--<br>-->
+    <!--<input type="text" id="price" placeholder="Price">-->
+    <!--<br>-->
+    <!--<input type="text" id="category" placeholder="Category">-->
+    <!--<br>-->
+    <!--<input type="submit" value="Submit">-->
+<!--</form>-->
+
 <button type="button" id="refresh">Refresh</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
-(function() {
     "use strict";
-
-    // Your online tool store should load data from the JSON file using a get request and append the data to the table. You will need to use either $.ajax() or $.get(), and a .done() callback.
-
-    // Add some new entries to inventory.json and see how the data on the page gets updated.
-
     // Add a "Refresh" button that will load inventory.json for you without having to refresh the entire page.
 
     // Add Twitter Bootstrap to your online store with some custom CSS to make the style your own.
 
-    // TODO: Create an ajax GET request for /data/inventory.json
+    // TODO: Create an ajax GET request for data/inventory.json
 
     var url = 'data/inventory.json';
-    var response = $.ajax(url);
+    var response = $.ajax({
+        method: 'GET',
+        url: 'data/inventory.json',
+        dataType: 'json'
+    });
 
+    response.done(function (data, status, jqXhr) {
+        console.log(data)
+    });
 
     // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect its contents and fields
@@ -48,20 +68,30 @@
         console.log("Request status: " + status);
         console.log("Data returned from server:");
 
-        for (var i = 0; i < data.length; i++){
-            $('#insertProducts').append(
-                "<tr><td>" + data[i].title +
-                '</td><td>' + data[i].quantity +
-                '</td><td>' + data[i].price +
-                '</td><td>' + data[i].categories +
-                '</td></tr>'
-            );
-        }
-    $('#refresh').on('click', function () {
-        data.reload();
-    })
-    });
+        // console.log(data);
+        // console.log(jqXhr);
+        // console.log(jqXhr.statusText);
 
+        for (var i = 0; i < data.length; i++) {
+            // for (var j = 0; j < data[i].categories.length; j++) {
+                // $('#insertProducts').html('<h1>Replaces entire html child</h1>');
+                $('#insertProducts').append(
+                    "<tr><td>" + data[i].title +
+                    '</td><td>' + data[i].quantity +
+                    '</td><td>' + data[i].price +
+                    '</td><td><ul><li>' + data[i].categories.join('<li></li>') +
+                    '</li></ul></td></tr>'
+                );
+            // }
+        }
+
+
+
+        // $('#refresh').on('click', function () {
+        //     response.reload();
+        // })
+
+    });
 
     // function onSuccess(data, status, req) {
     //     $('#insertProducts').removeClass('panel-danger').addClass('panel-primary');
@@ -88,7 +118,6 @@
     //
     // }
 
-
     // $('#refresh').click(function(){
     //     var response = $.ajax(url);
     //     response.done().fail().always();
@@ -99,11 +128,32 @@
     //
     // });
 
+    // $('#refresh').click(function () {
+    //     response = $.get(url);
+    //     response.done(function (items) {
+    //         $('#insertProducts').html()
+    //     })
+    // })
 
 
 
+    // need server logic. node.js maybe?
+    // $('#postForm').submit(function (e) {
+    //     e.preventDefault();
+    //
+    //     var title = $('#title').val();
+    //     var quantity = $('#quantity').val();
+    //     var price = $('#price').val();
+    //     var category = $('#category').val();
+    //     var url = $(this).attr('action');
+    //
+    //     $.post(url, {title:title, quantity:quantity, price:price, category:category})
+    //         .done(function (data) {
+    //         console.log('Tool added');
+    //         console.log(data);
+    //     });
+    // })
 
-})();
 </script>
 
 </body>

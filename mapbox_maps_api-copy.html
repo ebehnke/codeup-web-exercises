@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Mapbox</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        .coordinates {
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding:5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<div id='map' style='width: 80%; height: 400px; margin: 1em;'></div>
+<pre id='coordinates' class='coordinates'></pre>
+
+<!-- Mapbox API -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- Mapbox Token Variable-->
+<script src="js/keys.js"></script>
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+
+
+
+<!-- Mapbox Custom-->
+<script>
+"use strict";
+
+var coordinates = document.getElementById('coordinates');
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [0, 0],
+    zoom: 2
+});
+
+    mapboxgl.accessToken = mapboxglAccessToken;
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map',
+    //     style: 'mapbox://styles/mapbox/streets-v9',
+    //     zoom: 10,
+    //     center: [-122.4443, 47.2529]});
+
+    // Tacoma Geocode
+    geocode("San Antonio, Texas", mapboxglAccessToken).then(function(result) {
+        map.setCenter(result);
+        map.setZoom(3);
+    });
+
+    var markers = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([-98.4936, 29.4241])
+            .addTo(map);
+
+    var popups = new mapboxgl.Popup()
+        .setText("San Antonio");
+
+    // marker1.setPopup(popup1);
+    markers.setPopup(onDragEnd());
+
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br/>Latitude: ' + lngLat.lat;
+}
+
+marker.on('dragend', onDragEnd);
+
+
+    var eats = [
+        {
+            name: 'Gateway to India',
+            popupText: 'Sonic is great!',
+            address: '1 Sonic Ln.',
+            marker: markers[0],
+            popup: popups[0]
+        }
+    ];
+
+    eats.forEach(function (element, index, array) {
+        console.log(element.address);
+        // map.setCenter([element._lngLat]);
+        // console.log(element._lngLat.lng);
+    });
+
+
+</script>
+
+</body>
+</html>

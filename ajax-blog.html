@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <!-- Font Awesome CSS -->
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/themes/slate.bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- Local CSS -->
+    <style>
+        * {
+            border: 1px solid gray;
+        }
+        main {
+            min-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+<main id="posts">
+</main>
+
+<button class="btn btn-success" id="refresh-btn">Check for changes to json file</button>
+
+
+<!-- jQuery -->
+<script src="js/jquery-3.3.1.js"></script>
+
+<!-- Custom JS -->
+<script>
+"use strict";
+$(document).ready(function () {
+console.warn('The DOM has finished loading in HTML!');
+
+    var url = 'data/blog.json';
+    var jqXhr = $.ajax({
+        method: 'GET',
+        url: url,
+        dataType: 'json'
+    });
+
+    function jsonToHTML(jsonObj) {
+        var html = '';
+
+        for (var i = 0; i < jsonObj.length; i++) {
+            // $('#posts').append(
+            html += '<h4>' + jsonObj[i].title;
+            html += '</h4><p>' + jsonObj[i].content;
+            html += '</p><p><strong>tags: </strong>' + jsonObj[i].categories;
+            html += '</p><p>' + jsonObj[i].date;
+            html += '</p>'
+            // )
+        }
+        return html;
+    }
+
+    jqXhr.done(function (data, status, jqXhr) {
+        // console.log(data); //checks to verify we are getting data from the JSON file.
+        $('#posts').append(jsonToHTML(data));
+    });
+
+    $('#refresh-btn').on('click', function () {
+        jqXhr = $.get(url);
+        jqXhr.done(function (data) {
+            $('#posts').html(jsonToHTML(data));
+        });
+    });
+
+});
+</script>
+
+<!-- Optional JavaScript -->
+<!-- Popper.js -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <!--Bootstrap JS-->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
