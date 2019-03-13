@@ -1,0 +1,14 @@
+{
+  "name": "draft_website",
+  "version": "1.0.0",
+  "description": "draft_website",
+  "main": "../index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o draft_website/css --recursive"
+  },
+  "author": "Erik Behnke",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
