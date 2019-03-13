@@ -97,14 +97,14 @@ $(document).ready(function () {
 //     console.log(userList);
 //
 
-    // const compileList = (list,user,index,all) => {
-    //     let myList = user.name;
-    //     if(index < all.length - 1){
-    //         return list + myList + '';
-    //     }
-    // };
-    // const listOfNames = users.reduce(compileList,"Your instructors are: ", '');
-    // console.log(listOfNames)
+    const compileList = (list,user,index,all) => {
+        let myList = user.name;
+        if(index < all.length - 1){
+            return list + myList + '';
+        }
+    };
+    const listOfNames = users.reduce(compileList,"Your instructors are: ", '');
+    console.log(listOfNames)
 
     //????????????????????????????????????????????
 
