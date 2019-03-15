@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .stars-outer {
+            position: relative;
+            display: inline-block;
+        }
+
+        .stars-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+        }
+
+        .stars-outer::before {
+            content: "\f005 \f005 \f005 \f005 \f005";
+            white-space: pre;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #ccc;
+        }
+
+        .stars-inner::before {
+            content: "\f005 \f005 \f005 \f005 \f005";
+            white-space: pre;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #f8ce0b;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<script
+        src="http://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+ <div class="container mt-5">
+     <div class="form-group">
+         <select id="product-select" class="form-control custom-select">
+             <option value="0" disabled selected>Select Product</option>
+             <option value="aladdin">Aladdin</option>
+         </select>
+     </div>
+     <div class="form-group">
+         <input type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1 - 5" disabled>
+     </div>
+
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>Movie</th>
+                 <th>Rating</th>
+             </tr>
+         </thead>
+         <tbody>
+             <!--<tr class="aladdin">-->
+                 <!--<td>Aladdin</td>-->
+                 <!--<td>-->
+                     <!--<div class="stars-outer">-->
+                         <!--<div class="stars-inner"></div>-->
+                     <!--</div>-->
+                     <!--<span class="number-rating"></span>-->
+                 <!--</td>-->
+             <!--</tr>-->
+            <tr class="movies-table"></tr>
+         <!--</tbody>-->
+     </table>
+ </div>
+
+ <script>
+     // Initial Ratings
+     const ratings = {
+         aladdin: 4.7,
+     };
+
+     // Run get ratings when DOM loads
+     document.addEventListener('DOMContentLoaded', getRatings);
+
+     // Form Elements
+     const productSelect = document.getElementById('product-select');
+     const ratingControl = document.getElementById('rating-control');
+
+     // Init product
+     let product;
+
+     // Product select change
+     productSelect.addEventListener('change', (e) => {
+         product = e.target.value;
+         // Enable rating control
+         ratingControl.disabled = false;
+         ratingControl.value = ratings[product];
+     });
+
+     // Rating control change
+     ratingControl.addEventListener('blur', (e) => {
+         const rating = e.target.value;
+
+         // Make sure 5 or under
+         if(rating > 5) {
+             alert('Please rate 1-5');
+             return;
+         }
+
+         // Change rating
+         ratings[product] = rating;
+
+         getRatings();
+     });
+
+     // Total Stars
+     const starsTotal = 5;
+
+     // Get ratings // in loop for objects, of loop for array
+     function getRatings() {
+         for(let rating in ratings) {
+             // console.log(ratings[rating])
+             const starPercentage = (ratings[rating] / starsTotal) * 100;
+
+            // Round to nearest 10
+             const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+
+             // Set width of stars-inner to percentage
+             document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+
+             // Add number rating
+             document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
+        }
+     }
+
+     // movies obj/foreach test
+
+     const moviesArr = [
+         {
+             title: "Aladdin",
+             rating: 5,
+             genre: "animated",
+             id: 1,
+             img: "img/aladdin.jpg"
+         }
+     ];
+
+     let html = `<tr class="aladdin">`;
+     moviesArr.forEach(({title, rating, genre, id, img}) => {
+
+         html += `<td>${title}</td>`;
+         html += `<td>`;
+         html += `<div class='stars-outer'>`;
+         html += `<div class="stars-inner"></div>`;
+         html += `</div>`;
+         html += `<span class="number-rating"></span>`;
+         html += `</td>`;
+         html += `</tr>`;
+         html += `<tr class="movies-table"></tr>`;
+         html += `</tbody>`;
+         html += `id#${id} - ${title} - genre: ${genre} - rating: ${rating}`;
+
+
+     });
+
+     $(".movies-table").append(html);
+ </script>
+</body>
+</html>
